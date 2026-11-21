@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Broken invariant hacks explained · Hack Library</title>
+<meta name="description" content="Broken invariant in smart contracts: how it works, how to defend, and real hacks it caused.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/monsters/invariant/">
+<meta property="og:title" content="Broken invariant hacks explained · Hack Library"><meta property="og:description" content="Broken invariant in smart contracts: how it works, how to defend, and real hacks it caused.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/monsters/invariant/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><section class="mon-hero"><span class="big-sticker" aria-hidden="true">🧮</span>
+<h1>The Rule Breaker</h1><p>Broken invariant: Finds the one function that forgets the golden rule.</p></section>
+<div class="read" style="margin:0 auto"><section class="box"><h2>How it attacks</h2><p>Every protocol has rules that must always be true (&quot;debt never exceeds collateral&quot;). One function, often a new one, forgets to check it.</p></section>
+<section class="box"><h2>How to defend</h2><p>Write the invariants down, check them in every function, and test them with fuzzing.</p></section></div>
+<h2 class="section-title">Hacks by The Rule Breaker</h2><div class="grid"><a class="card" href="/hacks/h/euler-2023/" data-monster="invariant" data-date="2023-03-13" data-loss="197000000" data-text="euler finance a little-used donate function let users reduce their own collateral without checking if the position was still healthy. broken invariant ethereum">
+<span class="sticker" title="The Rule Breaker" aria-hidden="true">🧮</span>
+<h3>Euler Finance</h3>
+<span class="meta">Mar 13, 2023 on Ethereum</span>
+<span class="dmg">💥 $197M<span class="bar" aria-hidden="true"><i style="width:32%"></i></span></span>
+<p>A little-used donate function let users reduce their own collateral without checking if the position was still healthy.</p>
+<span class="tag">🧮 Broken invariant</span><span class="tag ok">Funds returned</span>
+</a></div><section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

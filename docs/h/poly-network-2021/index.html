@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Poly Network hack (2021) explained simply · Hack Library</title>
+<meta name="description" content="A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/poly-network-2021/">
+<meta property="og:title" content="Poly Network hack (2021) explained simply · Hack Library"><meta property="og:description" content="A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/poly-network-2021/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Poly Network hack explained", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Access control", "description": "A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/access-control/">The Gatecrasher</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">🔑</span>
+<div><h1>Poly Network</h1><span class="tag">🔑 Access control</span> <span class="tag ok">Funds returned</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $611M</b>$611M, later returned</span>
+<span class="fact"><b>Aug 10, 2021</b>date</span><span class="fact"><b>Multi-chain bridge</b>chain</span><span class="fact"><b>🟡 medium</b>to understand</span></div>
+<p class="tldr">A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>Poly Network was a bridge that moved assets between blockchains, trusting a set of &quot;keepers&quot; to approve withdrawals.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>The attacker crafted a cross-chain message that told the bridge&#x27;s manager contract to replace the keeper list with his own key, then approved his own withdrawals.</p></li><li><span class="step" aria-hidden="true">🔑</span><h2>The bug, in plain words</h2><p>A contract that could execute arbitrary cross-chain messages had the power to change who is in charge.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Never let a general-purpose message executor call admin functions. Separate powers and restrict who can change the keepers.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>For every function that changes who is in charge, ask: who can reach this, directly or indirectly?</p></li></ol>
+<section class="box"><h2>Meet the monster: 🔑 The Gatecrasher</h2><p>A powerful function (change the owner, move funds, swap the admin) can be called by someone who should not be allowed to call it.</p><p><a href="/hacks/monsters/access-control/">See every access control hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://rekt.news/polynetwork-rekt" rel="nofollow noopener">Poly Network - REKT</a></li><li><a href="https://rekt.news/leaderboard" rel="nofollow noopener">Rekt leaderboard</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><a class="btn ghost" href="/hacks/h/parity-multisig-2017/">Older: Parity Multisig</a><a class="btn ghost" href="/hacks/h/wormhole-2022/">Newer: Wormhole</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Access control hacks explained · Hack Library</title>
+<meta name="description" content="Access control in smart contracts: how it works, how to defend, and real hacks it caused.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/monsters/access-control/">
+<meta property="og:title" content="Access control hacks explained · Hack Library"><meta property="og:description" content="Access control in smart contracts: how it works, how to defend, and real hacks it caused.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/monsters/access-control/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><section class="mon-hero"><span class="big-sticker" aria-hidden="true">🔑</span>
+<h1>The Gatecrasher</h1><p>Access control: Walks through a door that should have been locked.</p></section>
+<div class="read" style="margin:0 auto"><section class="box"><h2>How it attacks</h2><p>A powerful function (change the owner, move funds, swap the admin) can be called by someone who should not be allowed to call it.</p></section>
+<section class="box"><h2>How to defend</h2><p>For every function ask: who can call this? Lock admin actions behind clear roles, multisigs and timelocks.</p></section></div>
+<h2 class="section-title">Hacks by The Gatecrasher</h2><div class="grid"><a class="card" href="/hacks/h/poly-network-2021/" data-monster="access-control" data-date="2021-08-10" data-loss="611000000" data-text="poly network a cross-chain message could call a privileged function and replace the keeper that approves withdrawals. the attacker made himself keeper. access control multi-chain bridge">
+<span class="sticker" title="The Gatecrasher" aria-hidden="true">🔑</span>
+<h3>Poly Network</h3>
+<span class="meta">Aug 10, 2021 on Multi-chain bridge</span>
+<span class="dmg">💥 $611M<span class="bar" aria-hidden="true"><i style="width:98%"></i></span></span>
+<p>A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.</p>
+<span class="tag">🔑 Access control</span><span class="tag ok">Funds returned</span>
+</a></div><section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

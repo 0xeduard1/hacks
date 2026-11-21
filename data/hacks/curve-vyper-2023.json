@@ -1,0 +1,28 @@
+{
+  "slug": "curve-vyper-2023",
+  "name": "Curve pools (Vyper bug)",
+  "date": "2023-07-30",
+  "chain": "Ethereum",
+  "loss_usd": 69000000,
+  "loss_note": "about $69M across several pools",
+  "monster": "compiler",
+  "level": 3,
+  "returned": false,
+  "tldr": "The pools had a reentrancy lock, but some versions of the Vyper compiler built it wrong. The lock silently did nothing.",
+  "what": "Curve is one of the largest exchanges for similar assets. Several pools were written in Vyper, a Python-like smart contract language.",
+  "happened": "Attackers re-entered pool functions while they were still running and drained pools used by Curve, Alchemix, JPEG'D and Metronome.",
+  "bug": "In some Vyper versions, the nonreentrant guard used mismatched storage slots in different functions, so it never actually blocked reentry.",
+  "prevent": "Track known compiler bugs, test the compiled contract's behavior, and treat the toolchain as part of the audit scope.",
+  "lesson": "Your tools are part of the attack surface. Correct source code is not the same as correct bytecode.",
+  "sources": [
+    {
+      "title": "Curve, Vyper - REKT",
+      "url": "https://rekt.news/curve-vyper-rekt"
+    },
+    {
+      "title": "Rekt leaderboard",
+      "url": "https://rekt.news/leaderboard"
+    }
+  ],
+  "added": "2026-11-21"
+}

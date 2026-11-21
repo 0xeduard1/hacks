@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parity Multisig hack (2017) explained simply · Hack Library</title>
+<meta name="description" content="A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/parity-multisig-2017/">
+<meta property="og:title" content="Parity Multisig hack (2017) explained simply · Hack Library"><meta property="og:description" content="A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/parity-multisig-2017/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Parity Multisig hack explained", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Bad initialization", "description": "A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/initialization/">The Unhatched Egg</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">🥚</span>
+<div><h1>Parity Multisig</h1><span class="tag">🥚 Bad initialization</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $150M</b>about $150M frozen forever, not stolen</span>
+<span class="fact"><b>Nov 6, 2017</b>date</span><span class="fact"><b>Ethereum</b>chain</span><span class="fact"><b>🟡 medium</b>to understand</span></div>
+<p class="tldr">A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>Parity&#x27;s multisig wallets were tiny contracts that borrowed all their logic from one shared library contract.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>A user called the library&#x27;s setup function, became its owner, then called its self-destruct function. The library vanished, and with it the logic of every wallet using it.</p></li><li><span class="step" aria-hidden="true">🥚</span><h2>The bug, in plain words</h2><p>The library itself was an uninitialized wallet, so anyone could claim it. Nobody expected the library to be used as a wallet.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Initialize (or lock) implementation and library contracts at deployment, and never leave a self-destruct reachable.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>Shared code is a single point of failure. Check the setup of every contract, including the ones &quot;nobody uses directly&quot;.</p></li></ol>
+<section class="box"><h2>Meet the monster: 🥚 The Unhatched Egg</h2><p>A contract (or an upgrade) starts life with missing or wrong settings: no owner, a zero value that means &quot;trust everything&quot;, a setup function anyone can call.</p><p><a href="/hacks/monsters/initialization/">See every bad initialization hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://medium.com/paritytech/a-postmortem-on-the-parity-multi-sig-library-self-destruct-63daca3a4cf7" rel="nofollow noopener">A postmortem on the Parity multi-sig library self-destruct (Parity)</a></li><li><a href="https://techcrunch.com/2017/11/07/a-major-vulnerability-has-frozen-hundreds-of-millions-of-dollars-of-ethereum" rel="nofollow noopener">Wallet bug freezes more than $150M (TechCrunch)</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><a class="btn ghost" href="/hacks/h/the-dao-2016/">Older: The DAO</a><a class="btn ghost" href="/hacks/h/poly-network-2021/">Newer: Poly Network</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

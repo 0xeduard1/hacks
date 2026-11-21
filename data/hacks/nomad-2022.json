@@ -1,0 +1,28 @@
+{
+  "slug": "nomad-2022",
+  "name": "Nomad Bridge",
+  "date": "2022-08-01",
+  "chain": "Multi-chain bridge",
+  "loss_usd": 190000000,
+  "loss_note": "about $190M",
+  "monster": "initialization",
+  "level": 2,
+  "returned": false,
+  "tldr": "An upgrade made every message count as valid. Hundreds of copycats drained the bridge by copy-pasting the first attack.",
+  "what": "Nomad was a bridge that only released funds for messages proven against a trusted root.",
+  "happened": "After an upgrade, a fake message passed the check. Once the first attacker showed how, anyone could copy the transaction, change the address to their own, and withdraw.",
+  "bug": "The upgrade set the trusted root to zero, a value that the code then treated as valid for any message.",
+  "prevent": "Review the configuration values of every upgrade, not just the code, and test that invalid messages still fail.",
+  "lesson": "An upgrade is new code plus new settings. Audit both.",
+  "sources": [
+    {
+      "title": "Nomad Bridge - REKT",
+      "url": "https://rekt.news/nomad-rekt"
+    },
+    {
+      "title": "Rekt leaderboard",
+      "url": "https://rekt.news/leaderboard"
+    }
+  ],
+  "added": "2026-11-21"
+}

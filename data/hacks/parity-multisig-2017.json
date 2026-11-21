@@ -1,0 +1,28 @@
+{
+  "slug": "parity-multisig-2017",
+  "name": "Parity Multisig",
+  "date": "2017-11-06",
+  "chain": "Ethereum",
+  "loss_usd": 150000000,
+  "loss_note": "about $150M frozen forever, not stolen",
+  "monster": "initialization",
+  "level": 2,
+  "returned": false,
+  "tldr": "A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it.",
+  "what": "Parity's multisig wallets were tiny contracts that borrowed all their logic from one shared library contract.",
+  "happened": "A user called the library's setup function, became its owner, then called its self-destruct function. The library vanished, and with it the logic of every wallet using it.",
+  "bug": "The library itself was an uninitialized wallet, so anyone could claim it. Nobody expected the library to be used as a wallet.",
+  "prevent": "Initialize (or lock) implementation and library contracts at deployment, and never leave a self-destruct reachable.",
+  "lesson": "Shared code is a single point of failure. Check the setup of every contract, including the ones \"nobody uses directly\".",
+  "sources": [
+    {
+      "title": "A postmortem on the Parity multi-sig library self-destruct (Parity)",
+      "url": "https://medium.com/paritytech/a-postmortem-on-the-parity-multi-sig-library-self-destruct-63daca3a4cf7"
+    },
+    {
+      "title": "Wallet bug freezes more than $150M (TechCrunch)",
+      "url": "https://techcrunch.com/2017/11/07/a-major-vulnerability-has-frozen-hundreds-of-millions-of-dollars-of-ethereum"
+    }
+  ],
+  "added": "2026-11-21"
+}

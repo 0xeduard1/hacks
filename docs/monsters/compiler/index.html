@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compiler / tooling bug hacks explained · Hack Library</title>
+<meta name="description" content="Compiler / tooling bug in smart contracts: how it works, how to defend, and real hacks it caused.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/monsters/compiler/">
+<meta property="og:title" content="Compiler / tooling bug hacks explained · Hack Library"><meta property="og:description" content="Compiler / tooling bug in smart contracts: how it works, how to defend, and real hacks it caused.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/monsters/compiler/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><section class="mon-hero"><span class="big-sticker" aria-hidden="true">🛠️</span>
+<h1>The Broken Tool</h1><p>Compiler / tooling bug: Hides inside the tools that build the code.</p></section>
+<div class="read" style="margin:0 auto"><section class="box"><h2>How it attacks</h2><p>The source code is correct, but the compiler or another tool turns it into something different. A protection written in the code silently does nothing.</p></section>
+<section class="box"><h2>How to defend</h2><p>Track known compiler bugs, test the compiled bytecode, not just the source, and avoid exotic versions.</p></section></div>
+<h2 class="section-title">Hacks by The Broken Tool</h2><div class="grid"><a class="card" href="/hacks/h/curve-vyper-2023/" data-monster="compiler" data-date="2023-07-30" data-loss="69000000" data-text="curve pools (vyper bug) the pools had a reentrancy lock, but some versions of the vyper compiler built it wrong. the lock silently did nothing. compiler / tooling bug ethereum">
+<span class="sticker" title="The Broken Tool" aria-hidden="true">🛠️</span>
+<h3>Curve pools (Vyper bug)</h3>
+<span class="meta">Jul 30, 2023 on Ethereum</span>
+<span class="dmg">💥 $69M<span class="bar" aria-hidden="true"><i style="width:11%"></i></span></span>
+<p>The pools had a reentrancy lock, but some versions of the Vyper compiler built it wrong. The lock silently did nothing.</p>
+<span class="tag">🛠️ Compiler / tooling bug</span>
+</a></div><section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

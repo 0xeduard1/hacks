@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Euler Finance hack (2023) explained simply · Hack Library</title>
+<meta name="description" content="A little-used donate function let users reduce their own collateral without checking if the position was still healthy.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/euler-2023/">
+<meta property="og:title" content="Euler Finance hack (2023) explained simply · Hack Library"><meta property="og:description" content="A little-used donate function let users reduce their own collateral without checking if the position was still healthy.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/euler-2023/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Euler Finance hack explained", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Broken invariant", "description": "A little-used donate function let users reduce their own collateral without checking if the position was still healthy."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/invariant/">The Rule Breaker</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">🧮</span>
+<div><h1>Euler Finance</h1><span class="tag">🧮 Broken invariant</span> <span class="tag ok">Funds returned</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $197M</b>about $197M, later returned</span>
+<span class="fact"><b>Mar 13, 2023</b>date</span><span class="fact"><b>Ethereum</b>chain</span><span class="fact"><b>🔴 tricky</b>to understand</span></div>
+<p class="tldr">A little-used donate function let users reduce their own collateral without checking if the position was still healthy.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>Euler was a large, well-audited lending protocol: deposit collateral, borrow against it.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>Using flash loans, the attacker donated collateral to the reserves to make his own position insolvent on purpose, then liquidated himself at a discount and walked away with the difference.</p></li><li><span class="step" aria-hidden="true">🧮</span><h2>The bug, in plain words</h2><p>donateToReserves did not run the same health check as every other function that touches collateral.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Every new function must preserve the core invariant: a position can never end up with more debt than collateral.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>One overlooked edge case can sink a battle-tested protocol. New functions deserve the same scrutiny as the old ones.</p></li></ol>
+<section class="box"><h2>Meet the monster: 🧮 The Rule Breaker</h2><p>Every protocol has rules that must always be true (&quot;debt never exceeds collateral&quot;). One function, often a new one, forgets to check it.</p><p><a href="/hacks/monsters/invariant/">See every broken invariant hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://rekt.news/euler-rekt" rel="nofollow noopener">Euler Finance - REKT</a></li><li><a href="https://rekt.news/mixin-rekt" rel="nofollow noopener">Mixin Network - REKT (notes Euler&#x27;s funds were returned)</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><a class="btn ghost" href="/hacks/h/mango-markets-2022/">Older: Mango Markets</a><a class="btn ghost" href="/hacks/h/curve-vyper-2023/">Newer: Curve pools (Vyper bug)</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

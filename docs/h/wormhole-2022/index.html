@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wormhole hack (2022) explained simply · Hack Library</title>
+<meta name="description" content="The bridge on Solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped ETH backed by nothing.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/wormhole-2022/">
+<meta property="og:title" content="Wormhole hack (2022) explained simply · Hack Library"><meta property="og:description" content="The bridge on Solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped ETH backed by nothing.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/wormhole-2022/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Wormhole hack explained", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Signature verification", "description": "The bridge on Solana trusted a fake \"signatures already verified\" account, so the attacker minted 120,000 wrapped ETH backed by nothing."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/signature/">The Forger</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">💌</span>
+<div><h1>Wormhole</h1><span class="tag">💌 Signature verification</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $326M</b>about $326M, covered by the backers</span>
+<span class="fact"><b>Feb 2, 2022</b>date</span><span class="fact"><b>Solana / Ethereum bridge</b>chain</span><span class="fact"><b>🔴 tricky</b>to understand</span></div>
+<p class="tldr">The bridge on Solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped ETH backed by nothing.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>Wormhole is a bridge: lock ETH on Ethereum, get wrapped ETH on Solana, backed one to one.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>The attacker passed in a fake account that claimed the guardians&#x27; signatures were already verified. The bridge believed it and minted wrapped ETH with nothing locked behind it.</p></li><li><span class="step" aria-hidden="true">💌</span><h2>The bug, in plain words</h2><p>The code relied on an input that only claimed a check had happened, instead of verifying the signatures itself.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Verify signatures directly and validate every account passed into a program, never trust one that only says &quot;I&#x27;m verified&quot;.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>Trust nothing the caller hands you. If a check matters, do it yourself.</p></li></ol>
+<section class="box"><h2>Meet the monster: 💌 The Forger</h2><p>The code accepts a message or approval without truly verifying who signed it, or trusts an input that only claims verification happened.</p><p><a href="/hacks/monsters/signature/">See every signature verification hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://rekt.news/wormhole-rekt" rel="nofollow noopener">Wormhole - REKT</a></li><li><a href="https://rekt.news/leaderboard" rel="nofollow noopener">Rekt leaderboard</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><a class="btn ghost" href="/hacks/h/poly-network-2021/">Older: Poly Network</a><a class="btn ghost" href="/hacks/h/ronin-2022/">Newer: Ronin Bridge</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

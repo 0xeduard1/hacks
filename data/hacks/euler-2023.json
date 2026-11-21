@@ -1,0 +1,28 @@
+{
+  "slug": "euler-2023",
+  "name": "Euler Finance",
+  "date": "2023-03-13",
+  "chain": "Ethereum",
+  "loss_usd": 197000000,
+  "loss_note": "about $197M, later returned",
+  "monster": "invariant",
+  "level": 3,
+  "returned": true,
+  "tldr": "A little-used donate function let users reduce their own collateral without checking if the position was still healthy.",
+  "what": "Euler was a large, well-audited lending protocol: deposit collateral, borrow against it.",
+  "happened": "Using flash loans, the attacker donated collateral to the reserves to make his own position insolvent on purpose, then liquidated himself at a discount and walked away with the difference.",
+  "bug": "donateToReserves did not run the same health check as every other function that touches collateral.",
+  "prevent": "Every new function must preserve the core invariant: a position can never end up with more debt than collateral.",
+  "lesson": "One overlooked edge case can sink a battle-tested protocol. New functions deserve the same scrutiny as the old ones.",
+  "sources": [
+    {
+      "title": "Euler Finance - REKT",
+      "url": "https://rekt.news/euler-rekt"
+    },
+    {
+      "title": "Mixin Network - REKT (notes Euler's funds were returned)",
+      "url": "https://rekt.news/mixin-rekt"
+    }
+  ],
+  "added": "2026-11-21"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "the-dao-2016",
+  "name": "The DAO",
+  "date": "2016-06-17",
+  "chain": "Ethereum",
+  "loss_usd": 60000000,
+  "loss_note": "about 3.6M ETH, roughly $60M at the time",
+  "monster": "reentrancy",
+  "level": 1,
+  "returned": false,
+  "tldr": "The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.",
+  "what": "The DAO was a community investment fund that lived entirely in a smart contract. People sent ETH in and got tokens that let them vote on projects.",
+  "happened": "An attacker used a contract that, every time it received ETH, called the withdraw function again. The DAO kept paying because the balance was only updated at the end.",
+  "bug": "Wrong order of steps: send money first, update the books later. That gap is where the attacker kept re-entering.",
+  "prevent": "Update the balance before sending money (checks-effects-interactions) and add a reentrancy guard.",
+  "lesson": "Whenever a contract talks to the outside world, assume the outside world can call back in. Ethereum later hard-forked to return the funds, which created Ethereum Classic.",
+  "sources": [
+    {
+      "title": "Reentrancy attacks and The DAO hack (Chainlink)",
+      "url": "https://blog.chain.link/reentrancy-attacks-and-the-dao-hack"
+    },
+    {
+      "title": "The DAO hack: story of Ethereum Classic (ethereum.org)",
+      "url": "https://ethereum.org/videos/dao-hack-ethereum-classic/"
+    }
+  ],
+  "added": "2026-11-21"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "ronin-2022",
+  "name": "Ronin Bridge",
+  "date": "2022-03-23",
+  "chain": "Ronin / Ethereum bridge",
+  "loss_usd": 624000000,
+  "loss_note": "about $624M",
+  "monster": "key-compromise",
+  "level": 1,
+  "returned": false,
+  "tldr": "Withdrawals needed 5 of 9 validator signatures. Attackers got 5 private keys and signed the withdrawals themselves. Nobody noticed for six days.",
+  "what": "Ronin was the blockchain behind the game Axie Infinity, with a bridge that needed 5 of 9 validators to approve withdrawals.",
+  "happened": "Attackers, later attributed by the FBI to North Korea's Lazarus Group, gained control of 5 validator keys and approved two huge withdrawals: 173,600 ETH and 25.5M USDC.",
+  "bug": "No code bug. Too few keys, too concentrated: four of the nine were run by the same company, so one more key was enough.",
+  "prevent": "More independent signers, hardware security, monitoring of large withdrawals, and alerts that someone actually watches.",
+  "lesson": "Perfect code still fails if the keys are weak. Security includes people and operations.",
+  "sources": [
+    {
+      "title": "Ronin Network - REKT",
+      "url": "https://rekt.news/ronin-rekt"
+    },
+    {
+      "title": "Big Phish: Lazarus and Ronin (Rekt)",
+      "url": "https://rekt.news/big-phish"
+    }
+  ],
+  "added": "2026-11-21"
+}

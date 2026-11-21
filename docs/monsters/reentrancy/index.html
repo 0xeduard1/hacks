@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reentrancy hacks explained · Hack Library</title>
+<meta name="description" content="Reentrancy in smart contracts: how it works, how to defend, and real hacks it caused.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/monsters/reentrancy/">
+<meta property="og:title" content="Reentrancy hacks explained · Hack Library"><meta property="og:description" content="Reentrancy in smart contracts: how it works, how to defend, and real hacks it caused.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/monsters/reentrancy/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><section class="mon-hero"><span class="big-sticker" aria-hidden="true">🌀</span>
+<h1>The Echo</h1><p>Reentrancy: Calls back in before the contract finishes its own work.</p></section>
+<div class="read" style="margin:0 auto"><section class="box"><h2>How it attacks</h2><p>A contract sends money (or calls another contract) before it updates its own records. The receiver calls back in, again and again, and each time the contract still thinks the money is there.</p></section>
+<section class="box"><h2>How to defend</h2><p>Update state first, interact last (checks-effects-interactions), and use a reentrancy guard.</p></section></div>
+<h2 class="section-title">Hacks by The Echo</h2><div class="grid"><a class="card" href="/hacks/h/the-dao-2016/" data-monster="reentrancy" data-date="2016-06-17" data-loss="60000000" data-text="the dao the first famous smart contract hack: a withdraw function sent eth before updating the balance, so the attacker withdrew again and again. reentrancy ethereum">
+<span class="sticker" title="The Echo" aria-hidden="true">🌀</span>
+<h3>The DAO</h3>
+<span class="meta">Jun 17, 2016 on Ethereum</span>
+<span class="dmg">💥 $60M<span class="bar" aria-hidden="true"><i style="width:10%"></i></span></span>
+<p>The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.</p>
+<span class="tag">🌀 Reentrancy</span>
+</a></div><section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

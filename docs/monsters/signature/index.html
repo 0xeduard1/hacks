@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signature verification hacks explained · Hack Library</title>
+<meta name="description" content="Signature verification in smart contracts: how it works, how to defend, and real hacks it caused.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/monsters/signature/">
+<meta property="og:title" content="Signature verification hacks explained · Hack Library"><meta property="og:description" content="Signature verification in smart contracts: how it works, how to defend, and real hacks it caused.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/monsters/signature/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><section class="mon-hero"><span class="big-sticker" aria-hidden="true">💌</span>
+<h1>The Forger</h1><p>Signature verification: Brings a fake note that says &quot;already checked&quot;.</p></section>
+<div class="read" style="margin:0 auto"><section class="box"><h2>How it attacks</h2><p>The code accepts a message or approval without truly verifying who signed it, or trusts an input that only claims verification happened.</p></section>
+<section class="box"><h2>How to defend</h2><p>Verify signatures yourself, against the right signer, and never trust an account or flag that only says a check was done.</p></section></div>
+<h2 class="section-title">Hacks by The Forger</h2><div class="grid"><a class="card" href="/hacks/h/wormhole-2022/" data-monster="signature" data-date="2022-02-02" data-loss="326000000" data-text="wormhole the bridge on solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped eth backed by nothing. signature verification solana / ethereum bridge">
+<span class="sticker" title="The Forger" aria-hidden="true">💌</span>
+<h3>Wormhole</h3>
+<span class="meta">Feb 2, 2022 on Solana / Ethereum bridge</span>
+<span class="dmg">💥 $326M<span class="bar" aria-hidden="true"><i style="width:52%"></i></span></span>
+<p>The bridge on Solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped ETH backed by nothing.</p>
+<span class="tag">💌 Signature verification</span>
+</a></div><section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

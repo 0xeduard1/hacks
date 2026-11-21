@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hack Library: real crypto hacks, explained simply</title>
+<meta name="description" content="A growing library of real crypto and DeFi hacks, each explained for beginners: what broke, why, how to prevent it, and the lesson for auditors.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/">
+<meta property="og:title" content="Hack Library: real crypto hacks, explained simply"><meta property="og:description" content="A growing library of real crypto and DeFi hacks, each explained for beginners: what broke, why, how to prevent it, and the lesson for auditors.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+</head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap">
+<section class="hero"><div>
+<h1>Every crypto hack is a lesson.</h1>
+<p>I'm learning to find bugs before hackers do. This is my library of real hacks, each one explained simply: what broke, why, and how to stop it.</p>
+<p class="count">10 hacks studied so far, $2.5B lost.</p>
+<a class="btn" href="#hacks">Start reading</a> <a class="btn ghost" href="https://0xeduard1.kit.com/d7db093bd4">Free cheat sheet</a>
+</div><div class="mage"><span class="bubble">Pick a monster to see its hacks!</span><img src="/hacks/static/code-mage.png" alt="Code Mage, the 0xeduard1 mascot"></div></section>
+
+<h2 class="section-title" id="monsters">Bug monsters</h2>
+<p class="section-sub">Every hack belongs to a family of bugs. Learn the monsters and you'll spot them in new code.</p>
+<div class="bestiary" role="group" aria-label="Filter by bug monster">
+<button class="mon" data-filter="all" aria-pressed="true"><span class="ico">🧙</span><span>All monsters<br><small>10 hacks</small></span></button><button class="mon" data-filter="reentrancy" aria-pressed="false"><span class="ico">🌀</span><span>The Echo<br><small>Reentrancy, 1 hack</small></span></button><button class="mon" data-filter="access-control" aria-pressed="false"><span class="ico">🔑</span><span>The Gatecrasher<br><small>Access control, 1 hack</small></span></button><button class="mon" data-filter="initialization" aria-pressed="false"><span class="ico">🥚</span><span>The Unhatched Egg<br><small>Bad initialization, 2 hacks</small></span></button><button class="mon" data-filter="signature" aria-pressed="false"><span class="ico">💌</span><span>The Forger<br><small>Signature verification, 1 hack</small></span></button><button class="mon" data-filter="key-compromise" aria-pressed="false"><span class="ico">🗝️</span><span>The Key Thief<br><small>Compromised keys, 1 hack</small></span></button><button class="mon" data-filter="governance" aria-pressed="false"><span class="ico">🗳️</span><span>The Vote Buyer<br><small>Governance attack, 1 hack</small></span></button><button class="mon" data-filter="oracle-manipulation" aria-pressed="false"><span class="ico">🎭</span><span>The Price Faker<br><small>Oracle manipulation, 1 hack</small></span></button><button class="mon" data-filter="invariant" aria-pressed="false"><span class="ico">🧮</span><span>The Rule Breaker<br><small>Broken invariant, 1 hack</small></span></button><button class="mon" data-filter="compiler" aria-pressed="false"><span class="ico">🛠️</span><span>The Broken Tool<br><small>Compiler / tooling bug, 1 hack</small></span></button></div>
+
+<h2 class="section-title" id="hacks">The library</h2>
+<div class="tools"><label class="sr" hidden for="q">Search</label>
+<input id="q" type="search" placeholder="Search a protocol or a bug, e.g. bridge" aria-label="Search hacks">
+<select id="sort" aria-label="Sort hacks"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="big">Biggest loss</option></select></div>
+<div class="grid" id="grid"><a class="card" href="/hacks/h/curve-vyper-2023/" data-monster="compiler" data-date="2023-07-30" data-loss="69000000" data-text="curve pools (vyper bug) the pools had a reentrancy lock, but some versions of the vyper compiler built it wrong. the lock silently did nothing. compiler / tooling bug ethereum">
+<span class="sticker" title="The Broken Tool" aria-hidden="true">🛠️</span>
+<h3>Curve pools (Vyper bug)</h3>
+<span class="meta">Jul 30, 2023 on Ethereum</span>
+<span class="dmg">💥 $69M<span class="bar" aria-hidden="true"><i style="width:11%"></i></span></span>
+<p>The pools had a reentrancy lock, but some versions of the Vyper compiler built it wrong. The lock silently did nothing.</p>
+<span class="tag">🛠️ Compiler / tooling bug</span>
+</a><a class="card" href="/hacks/h/euler-2023/" data-monster="invariant" data-date="2023-03-13" data-loss="197000000" data-text="euler finance a little-used donate function let users reduce their own collateral without checking if the position was still healthy. broken invariant ethereum">
+<span class="sticker" title="The Rule Breaker" aria-hidden="true">🧮</span>
+<h3>Euler Finance</h3>
+<span class="meta">Mar 13, 2023 on Ethereum</span>
+<span class="dmg">💥 $197M<span class="bar" aria-hidden="true"><i style="width:32%"></i></span></span>
+<p>A little-used donate function let users reduce their own collateral without checking if the position was still healthy.</p>
+<span class="tag">🧮 Broken invariant</span><span class="tag ok">Funds returned</span>
+</a><a class="card" href="/hacks/h/mango-markets-2022/" data-monster="oracle-manipulation" data-date="2022-10-11" data-loss="115000000" data-text="mango markets the attacker pumped the price of a thinly traded token, used the inflated position as collateral, and borrowed everything else in the protocol. oracle manipulation solana">
+<span class="sticker" title="The Price Faker" aria-hidden="true">🎭</span>
+<h3>Mango Markets</h3>
+<span class="meta">Oct 11, 2022 on Solana</span>
+<span class="dmg">💥 $115M<span class="bar" aria-hidden="true"><i style="width:18%"></i></span></span>
+<p>The attacker pumped the price of a thinly traded token, used the inflated position as collateral, and borrowed everything else in the protocol.</p>
+<span class="tag">🎭 Oracle manipulation</span>
+</a><a class="card" href="/hacks/h/nomad-2022/" data-monster="initialization" data-date="2022-08-01" data-loss="190000000" data-text="nomad bridge an upgrade made every message count as valid. hundreds of copycats drained the bridge by copy-pasting the first attack. bad initialization multi-chain bridge">
+<span class="sticker" title="The Unhatched Egg" aria-hidden="true">🥚</span>
+<h3>Nomad Bridge</h3>
+<span class="meta">Aug 1, 2022 on Multi-chain bridge</span>
+<span class="dmg">💥 $190M<span class="bar" aria-hidden="true"><i style="width:30%"></i></span></span>
+<p>An upgrade made every message count as valid. Hundreds of copycats drained the bridge by copy-pasting the first attack.</p>
+<span class="tag">🥚 Bad initialization</span>
+</a><a class="card" href="/hacks/h/beanstalk-2022/" data-monster="governance" data-date="2022-04-17" data-loss="181000000" data-text="beanstalk voting power was counted at the moment of the vote. the attacker borrowed a huge amount with a flash loan, voted his own proposal through, and paid the loan back. governance attack ethereum">
+<span class="sticker" title="The Vote Buyer" aria-hidden="true">🗳️</span>
+<h3>Beanstalk</h3>
+<span class="meta">Apr 17, 2022 on Ethereum</span>
+<span class="dmg">💥 $181M<span class="bar" aria-hidden="true"><i style="width:29%"></i></span></span>
+<p>Voting power was counted at the moment of the vote. The attacker borrowed a huge amount with a flash loan, voted his own proposal through, and paid the loan back.</p>
+<span class="tag">🗳️ Governance attack</span>
+</a><a class="card" href="/hacks/h/ronin-2022/" data-monster="key-compromise" data-date="2022-03-23" data-loss="624000000" data-text="ronin bridge withdrawals needed 5 of 9 validator signatures. attackers got 5 private keys and signed the withdrawals themselves. nobody noticed for six days. compromised keys ronin / ethereum bridge">
+<span class="sticker" title="The Key Thief" aria-hidden="true">🗝️</span>
+<h3>Ronin Bridge</h3>
+<span class="meta">Mar 23, 2022 on Ronin / Ethereum bridge</span>
+<span class="dmg">💥 $624M<span class="bar" aria-hidden="true"><i style="width:100%"></i></span></span>
+<p>Withdrawals needed 5 of 9 validator signatures. Attackers got 5 private keys and signed the withdrawals themselves. Nobody noticed for six days.</p>
+<span class="tag">🗝️ Compromised keys</span>
+</a><a class="card" href="/hacks/h/wormhole-2022/" data-monster="signature" data-date="2022-02-02" data-loss="326000000" data-text="wormhole the bridge on solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped eth backed by nothing. signature verification solana / ethereum bridge">
+<span class="sticker" title="The Forger" aria-hidden="true">💌</span>
+<h3>Wormhole</h3>
+<span class="meta">Feb 2, 2022 on Solana / Ethereum bridge</span>
+<span class="dmg">💥 $326M<span class="bar" aria-hidden="true"><i style="width:52%"></i></span></span>
+<p>The bridge on Solana trusted a fake &quot;signatures already verified&quot; account, so the attacker minted 120,000 wrapped ETH backed by nothing.</p>
+<span class="tag">💌 Signature verification</span>
+</a><a class="card" href="/hacks/h/poly-network-2021/" data-monster="access-control" data-date="2021-08-10" data-loss="611000000" data-text="poly network a cross-chain message could call a privileged function and replace the keeper that approves withdrawals. the attacker made himself keeper. access control multi-chain bridge">
+<span class="sticker" title="The Gatecrasher" aria-hidden="true">🔑</span>
+<h3>Poly Network</h3>
+<span class="meta">Aug 10, 2021 on Multi-chain bridge</span>
+<span class="dmg">💥 $611M<span class="bar" aria-hidden="true"><i style="width:98%"></i></span></span>
+<p>A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.</p>
+<span class="tag">🔑 Access control</span><span class="tag ok">Funds returned</span>
+</a><a class="card" href="/hacks/h/parity-multisig-2017/" data-monster="initialization" data-date="2017-11-06" data-loss="150000000" data-text="parity multisig a shared library contract was never initialized. someone became its owner and destroyed it, freezing every wallet that depended on it. bad initialization ethereum">
+<span class="sticker" title="The Unhatched Egg" aria-hidden="true">🥚</span>
+<h3>Parity Multisig</h3>
+<span class="meta">Nov 6, 2017 on Ethereum</span>
+<span class="dmg">💥 $150M<span class="bar" aria-hidden="true"><i style="width:24%"></i></span></span>
+<p>A shared library contract was never initialized. Someone became its owner and destroyed it, freezing every wallet that depended on it.</p>
+<span class="tag">🥚 Bad initialization</span>
+</a><a class="card" href="/hacks/h/the-dao-2016/" data-monster="reentrancy" data-date="2016-06-17" data-loss="60000000" data-text="the dao the first famous smart contract hack: a withdraw function sent eth before updating the balance, so the attacker withdrew again and again. reentrancy ethereum">
+<span class="sticker" title="The Echo" aria-hidden="true">🌀</span>
+<h3>The DAO</h3>
+<span class="meta">Jun 17, 2016 on Ethereum</span>
+<span class="dmg">💥 $60M<span class="bar" aria-hidden="true"><i style="width:10%"></i></span></span>
+<p>The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.</p>
+<span class="tag">🌀 Reentrancy</span>
+</a></div>
+<p class="empty" id="empty">No hack matches that yet. Try another word, or pick "All monsters".</p>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+</div>
+<script>
+const grid=document.getElementById('grid'),cards=[...grid.children],q=document.getElementById('q'),sort=document.getElementById('sort'),empty=document.getElementById('empty');
+let mon='all';
+function apply(){const t=q.value.trim().toLowerCase();let n=0;
+ const s=[...cards].sort((a,b)=>sort.value==='big'?b.dataset.loss-a.dataset.loss:sort.value==='old'?a.dataset.date.localeCompare(b.dataset.date):b.dataset.date.localeCompare(a.dataset.date));
+ s.forEach(c=>{const ok=(mon==='all'||c.dataset.monster===mon)&&(!t||c.dataset.text.includes(t));c.hidden=!ok;if(ok)n++;grid.appendChild(c)});
+ empty.style.display=n?'none':'block'}
+document.querySelectorAll('.mon').forEach(b=>b.addEventListener('click',()=>{mon=b.dataset.filter;
+ document.querySelectorAll('.mon').forEach(x=>x.setAttribute('aria-pressed',x===b));apply();document.getElementById('hacks').scrollIntoView()}));
+q.addEventListener('input',apply);sort.addEventListener('change',apply);
+</script></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

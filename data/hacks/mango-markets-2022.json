@@ -1,0 +1,28 @@
+{
+  "slug": "mango-markets-2022",
+  "name": "Mango Markets",
+  "date": "2022-10-11",
+  "chain": "Solana",
+  "loss_usd": 115000000,
+  "loss_note": "about $115M of bad debt",
+  "monster": "oracle-manipulation",
+  "level": 2,
+  "returned": false,
+  "tldr": "The attacker pumped the price of a thinly traded token, used the inflated position as collateral, and borrowed everything else in the protocol.",
+  "what": "Mango Markets was a trading and lending protocol on Solana that let users borrow against their positions.",
+  "happened": "Using two accounts, the attacker pushed up the price of MNGO, Mango's own thin token, then borrowed real assets against the now \"valuable\" position.",
+  "bug": "The protocol trusted a price that a single well-funded trader could move, and let that price back big loans.",
+  "prevent": "Robust, manipulation-resistant oracles and strict limits on collateral from illiquid tokens.",
+  "lesson": "A price is only as safe as the market behind it. The person behind it was later arrested; \"it's just a trading strategy\" did not hold up.",
+  "sources": [
+    {
+      "title": "Mango Markets - REKT",
+      "url": "https://rekt.news/mango-markets-rekt"
+    },
+    {
+      "title": "Highly regrettable trading strategy (Rekt)",
+      "url": "https://rekt.news/avi-arrested"
+    }
+  ],
+  "added": "2026-11-21"
+}

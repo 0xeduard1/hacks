@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The DAO hack (2016) explained simply · Hack Library</title>
+<meta name="description" content="The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/the-dao-2016/">
+<meta property="og:title" content="The DAO hack (2016) explained simply · Hack Library"><meta property="og:description" content="The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/the-dao-2016/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The DAO hack explained", "datePublished": "2026-11-21", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Reentrancy", "description": "The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/reentrancy/">The Echo</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">🌀</span>
+<div><h1>The DAO</h1><span class="tag">🌀 Reentrancy</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $60M</b>about 3.6M ETH, roughly $60M at the time</span>
+<span class="fact"><b>Jun 17, 2016</b>date</span><span class="fact"><b>Ethereum</b>chain</span><span class="fact"><b>🟢 easy</b>to understand</span></div>
+<p class="tldr">The first famous smart contract hack: a withdraw function sent ETH before updating the balance, so the attacker withdrew again and again.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>The DAO was a community investment fund that lived entirely in a smart contract. People sent ETH in and got tokens that let them vote on projects.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>An attacker used a contract that, every time it received ETH, called the withdraw function again. The DAO kept paying because the balance was only updated at the end.</p></li><li><span class="step" aria-hidden="true">🌀</span><h2>The bug, in plain words</h2><p>Wrong order of steps: send money first, update the books later. That gap is where the attacker kept re-entering.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Update the balance before sending money (checks-effects-interactions) and add a reentrancy guard.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>Whenever a contract talks to the outside world, assume the outside world can call back in. Ethereum later hard-forked to return the funds, which created Ethereum Classic.</p></li></ol>
+<section class="box"><h2>Meet the monster: 🌀 The Echo</h2><p>A contract sends money (or calls another contract) before it updates its own records. The receiver calls back in, again and again, and each time the contract still thinks the money is there.</p><p><a href="/hacks/monsters/reentrancy/">See every reentrancy hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://blog.chain.link/reentrancy-attacks-and-the-dao-hack" rel="nofollow noopener">Reentrancy attacks and The DAO hack (Chainlink)</a></li><li><a href="https://ethereum.org/videos/dao-hack-ethereum-classic/" rel="nofollow noopener">The DAO hack: story of Ethereum Classic (ethereum.org)</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><span></span><a class="btn ghost" href="/hacks/h/parity-multisig-2017/">Newer: Parity Multisig</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>

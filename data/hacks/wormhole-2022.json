@@ -1,0 +1,28 @@
+{
+  "slug": "wormhole-2022",
+  "name": "Wormhole",
+  "date": "2022-02-02",
+  "chain": "Solana / Ethereum bridge",
+  "loss_usd": 326000000,
+  "loss_note": "about $326M, covered by the backers",
+  "monster": "signature",
+  "level": 3,
+  "returned": false,
+  "tldr": "The bridge on Solana trusted a fake \"signatures already verified\" account, so the attacker minted 120,000 wrapped ETH backed by nothing.",
+  "what": "Wormhole is a bridge: lock ETH on Ethereum, get wrapped ETH on Solana, backed one to one.",
+  "happened": "The attacker passed in a fake account that claimed the guardians' signatures were already verified. The bridge believed it and minted wrapped ETH with nothing locked behind it.",
+  "bug": "The code relied on an input that only claimed a check had happened, instead of verifying the signatures itself.",
+  "prevent": "Verify signatures directly and validate every account passed into a program, never trust one that only says \"I'm verified\".",
+  "lesson": "Trust nothing the caller hands you. If a check matters, do it yourself.",
+  "sources": [
+    {
+      "title": "Wormhole - REKT",
+      "url": "https://rekt.news/wormhole-rekt"
+    },
+    {
+      "title": "Rekt leaderboard",
+      "url": "https://rekt.news/leaderboard"
+    }
+  ],
+  "added": "2026-11-21"
+}

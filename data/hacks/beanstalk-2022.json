@@ -1,0 +1,28 @@
+{
+  "slug": "beanstalk-2022",
+  "name": "Beanstalk",
+  "date": "2022-04-17",
+  "chain": "Ethereum",
+  "loss_usd": 181000000,
+  "loss_note": "$181M drained, about $76M kept by the attacker",
+  "monster": "governance",
+  "level": 2,
+  "returned": false,
+  "tldr": "Voting power was counted at the moment of the vote. The attacker borrowed a huge amount with a flash loan, voted his own proposal through, and paid the loan back.",
+  "what": "Beanstalk was a stablecoin protocol governed by its token holders, with an emergency way to execute proposals quickly.",
+  "happened": "The attacker flash-borrowed enough tokens for a supermajority, passed a proposal that sent the treasury to himself, executed it, and repaid the loan, all in one transaction.",
+  "bug": "Votes were measured \"right now\", and a passed proposal could execute immediately, with no delay.",
+  "prevent": "Measure voting power at an earlier snapshot and add a timelock between approval and execution.",
+  "lesson": "Anything measured in the current block can be borrowed for one block.",
+  "sources": [
+    {
+      "title": "Beanstalk - REKT",
+      "url": "https://rekt.news/beanstalk-rekt"
+    },
+    {
+      "title": "Atlantis Loans - REKT (on Beanstalk's missing delay)",
+      "url": "https://rekt.news/atlantis-loans-rekt"
+    }
+  ],
+  "added": "2026-11-21"
+}

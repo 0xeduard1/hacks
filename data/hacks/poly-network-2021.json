@@ -1,0 +1,28 @@
+{
+  "slug": "poly-network-2021",
+  "name": "Poly Network",
+  "date": "2021-08-10",
+  "chain": "Multi-chain bridge",
+  "loss_usd": 611000000,
+  "loss_note": "$611M, later returned",
+  "monster": "access-control",
+  "level": 2,
+  "returned": true,
+  "tldr": "A cross-chain message could call a privileged function and replace the keeper that approves withdrawals. The attacker made himself keeper.",
+  "what": "Poly Network was a bridge that moved assets between blockchains, trusting a set of \"keepers\" to approve withdrawals.",
+  "happened": "The attacker crafted a cross-chain message that told the bridge's manager contract to replace the keeper list with his own key, then approved his own withdrawals.",
+  "bug": "A contract that could execute arbitrary cross-chain messages had the power to change who is in charge.",
+  "prevent": "Never let a general-purpose message executor call admin functions. Separate powers and restrict who can change the keepers.",
+  "lesson": "For every function that changes who is in charge, ask: who can reach this, directly or indirectly?",
+  "sources": [
+    {
+      "title": "Poly Network - REKT",
+      "url": "https://rekt.news/polynetwork-rekt"
+    },
+    {
+      "title": "Rekt leaderboard",
+      "url": "https://rekt.news/leaderboard"
+    }
+  ],
+  "added": "2026-11-21"
+}

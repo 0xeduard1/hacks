@@ -80,6 +80,10 @@ def build():
     (OUT / "static").mkdir(parents=True)
     for f in (ROOT / "static").iterdir(): shutil.copy(f, OUT / "static" / f.name)
     (OUT / ".nojekyll").write_text("")
+    # files that must sit at the site root (e.g. Google Search Console verification html)
+    root = ROOT / "root"
+    if root.exists():
+        for f in root.iterdir(): shutil.copy(f, OUT / f.name)
     counts = {s: sum(h["monster"] == s for h in hacks) for s in monsters}
 
     # home

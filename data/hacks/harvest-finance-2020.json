@@ -1,0 +1,28 @@
+{
+  "slug": "harvest-finance-2020",
+  "name": "Harvest Finance",
+  "date": "2020-10-26",
+  "chain": "Ethereum",
+  "loss_usd": 33800000,
+  "loss_note": "about $33.8M lost by the vaults, about $24M kept by the attacker, about $2.5M sent back",
+  "monster": "oracle-manipulation",
+  "level": 2,
+  "returned": false,
+  "tldr": "The vaults priced their shares using a Curve pool that a flash loan could nudge. Buy shares cheap, push the price back, sell them dear, repeat.",
+  "what": "Harvest Finance was a yield farming protocol. Users deposited stablecoins like USDC and USDT into vaults, which put the money to work in Curve's Y pool.",
+  "happened": "In about seven minutes, the attacker used flash loans to swing stablecoin prices inside the Curve pool, deposited into the vaults at a skewed share price and withdrew at a better one. Each round made a small profit; around 30 rounds added up to millions.",
+  "bug": "The vault valued its shares from a live pool price that one large trade could move. Its built-in check only reacted to big price swings, so moves of about 1% passed silently.",
+  "prevent": "Never value deposits and withdrawals from a price that can be moved inside one transaction. Use time-weighted prices, tighter checks, or block deposit and withdraw in the same transaction.",
+  "lesson": "If one trade can move your price, a flash loan can move it a lot, for free, as many times as it likes.",
+  "sources": [
+    {
+      "title": "Harvest Finance - REKT",
+      "url": "https://rekt.news/harvest-finance-rekt"
+    },
+    {
+      "title": "Harvest Finance Releases Attack Postmortem After Losing $24 Million (BeInCrypto)",
+      "url": "https://beincrypto.com/harvest-finance-releases-attack-postmortem-after-losing-24-million/"
+    }
+  ],
+  "added": "2026-11-23"
+}

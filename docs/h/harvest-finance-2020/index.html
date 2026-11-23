@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harvest Finance hack (2020) explained simply · Hack Library</title>
+<meta name="description" content="The vaults priced their shares using a Curve pool that a flash loan could nudge. Buy shares cheap, push the price back, sell them dear, repeat.">
+<link rel="canonical" href="https://0xeduard1.github.io/hacks/h/harvest-finance-2020/">
+<meta property="og:title" content="Harvest Finance hack (2020) explained simply · Hack Library"><meta property="og:description" content="The vaults priced their shares using a Curve pool that a flash loan could nudge. Buy shares cheap, push the price back, sell them dear, repeat.">
+<meta property="og:image" content="https://0xeduard1.github.io/hacks/static/code-mage.png"><meta property="og:url" content="https://0xeduard1.github.io/hacks/h/harvest-finance-2020/">
+<meta name="twitter:card" content="summary"><meta name="twitter:site" content="@0xeduard1">
+<link rel="icon" href="/hacks/static/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="Hack Library" href="/hacks/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hacks/static/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Harvest Finance hack explained", "datePublished": "2026-11-23", "author": {"@type": "Person", "name": "Eduard (0xeduard1)"}, "about": "Oracle manipulation", "description": "The vaults priced their shares using a Curve pool that a flash loan could nudge. Buy shares cheap, push the price back, sell them dear, repeat."}</script></head><body>
+<div class="wrap"><header class="top">
+<a class="brand" href="/hacks/"><img src="/hacks/static/mage-180.png" alt=""><span><b>Hack Library</b><small>by 0xeduard1</small></span></a>
+<nav><a href="/hacks/#monsters">Monsters</a><a href="/hacks/#hacks">All hacks</a><a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a></nav>
+</header></div>
+<main><div class="wrap"><div class="read">
+<p class="crumbs"><a href="/hacks/">Hack Library</a> / <a href="/hacks/monsters/oracle-manipulation/">The Price Faker</a></p>
+<div class="hack-head"><span class="big-sticker" aria-hidden="true">🎭</span>
+<div><h1>Harvest Finance</h1><span class="tag">🎭 Oracle manipulation</span></div></div>
+<div class="facts"><span class="fact money"><b>💥 $34M</b>about $33.8M lost by the vaults, about $24M kept by the attacker, about $2.5M sent back</span>
+<span class="fact"><b>Oct 26, 2020</b>date</span><span class="fact"><b>Ethereum</b>chain</span><span class="fact"><b>🟡 medium</b>to understand</span></div>
+<p class="tldr">The vaults priced their shares using a Curve pool that a flash loan could nudge. Buy shares cheap, push the price back, sell them dear, repeat.</p>
+<ol class="path"><li><span class="step" aria-hidden="true">🏰</span><h2>What was it?</h2><p>Harvest Finance was a yield farming protocol. Users deposited stablecoins like USDC and USDT into vaults, which put the money to work in Curve&#x27;s Y pool.</p></li><li><span class="step" aria-hidden="true">💥</span><h2>What happened</h2><p>In about seven minutes, the attacker used flash loans to swing stablecoin prices inside the Curve pool, deposited into the vaults at a skewed share price and withdrew at a better one. Each round made a small profit; around 30 rounds added up to millions.</p></li><li><span class="step" aria-hidden="true">🎭</span><h2>The bug, in plain words</h2><p>The vault valued its shares from a live pool price that one large trade could move. Its built-in check only reacted to big price swings, so moves of about 1% passed silently.</p></li><li><span class="step" aria-hidden="true">🛡️</span><h2>How it could have been stopped</h2><p>Never value deposits and withdrawals from a price that can be moved inside one transaction. Use time-weighted prices, tighter checks, or block deposit and withdraw in the same transaction.</p></li><li><span class="step" aria-hidden="true">🧙</span><h2>The lesson for an auditor</h2><p>If one trade can move your price, a flash loan can move it a lot, for free, as many times as it likes.</p></li></ol>
+<section class="box"><h2>Meet the monster: 🎭 The Price Faker</h2><p>A protocol trusts a price that can be pushed around, usually a thinly traded token. The attacker pumps it, uses it as collateral, and borrows real assets.</p><p><a href="/hacks/monsters/oracle-manipulation/">See every oracle manipulation hack</a></p></section>
+<section class="box"><h2>Sources</h2><ul><li><a href="https://rekt.news/harvest-finance-rekt" rel="nofollow noopener">Harvest Finance - REKT</a></li><li><a href="https://beincrypto.com/harvest-finance-releases-attack-postmortem-after-losing-24-million/" rel="nofollow noopener">Harvest Finance Releases Attack Postmortem After Losing $24 Million (BeInCrypto)</a></li></ul></section>
+<section class="cta"><img src="/hacks/static/mage-180.png" alt="">
+<div><h2>Get the free cheat sheet</h2><p>10 crypto hacks, 3 lines each, plus one new hack explained every week by email.</p>
+<a class="btn" href="https://0xeduard1.kit.com/d7db093bd4">Send me the cheat sheet</a></div></section>
+<nav class="next" aria-label="More hacks"><a class="btn ghost" href="/hacks/h/parity-multisig-2017/">Older: Parity Multisig</a><a class="btn ghost" href="/hacks/h/poly-network-2021/">Newer: Poly Network</a></nav>
+</div></div></main>
+<footer><div class="wrap"><span>I'm Eduard, learning smart contract security from zero and writing down every hack I study. Facts are checked against the linked sources; amounts are approximate, in USD at the time.</span>
+<span class="links"><a href="https://x.com/0xeduard1">X</a>  <a href="https://github.com/0xeduard1">GitHub</a>  <a href="https://0xeduard1.kit.com/d7db093bd4">Newsletter</a>  <a href="/hacks/feed.xml">RSS</a></span></div></footer>
+</body></html>
